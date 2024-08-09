@@ -7,7 +7,7 @@ This software package is based on what is provided by [Xiamen MY Electronic Tech
 They have provided a varity of binary libraries for both arm and x86 architectures, but what worked for me on the Raspberry 4B with `aarch64` Ubuntu, is compiling the source file for `x86_64` then execute with ['box64'](https://github.com/ptitSeb/box64). 
 
 ## System setup
-- **Raspberry Pi 4B** running `aarch64` Ubuntu.
+- **Raspberry Pi 4B** running `aarch64` Ubuntu 20.04.
 - **Cross-compilation toolchain** for `x86_64`:
   - `gcc-x86-64-linux-gnu`
   - `g++-x86-64-linux-gnu`

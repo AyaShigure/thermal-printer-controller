@@ -1,9 +1,0 @@
-ArchiveSrc/
-ArchiveOut/
-*.pro.user*
-*build*Debug*
-*build*Release*
-*build*Profile*
-*-build-*Qt*
-/*build*
-
