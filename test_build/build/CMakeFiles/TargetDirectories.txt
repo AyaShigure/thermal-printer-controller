@@ -1,3 +1,4 @@
-/home/ubuntu/thermal-printer-controller/test_build/build/CMakeFiles/rebuild_cache.dir
 /home/ubuntu/thermal-printer-controller/test_build/build/CMakeFiles/edit_cache.dir
-/home/ubuntu/thermal-printer-controller/test_build/build/CMakeFiles/execute_print.dir
+/home/ubuntu/thermal-printer-controller/test_build/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/thermal-printer-controller/test_build/build/CMakeFiles/Picture_printer.dir
+/home/ubuntu/thermal-printer-controller/test_build/build/CMakeFiles/Test_print.dir

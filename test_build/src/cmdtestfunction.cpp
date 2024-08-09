@@ -360,7 +360,7 @@ void Test_Page_DrawRect(void * h)
 void Test_Page_DrawText(void * h)
 {
     CP_Page_SelectPageModeEx(h, 200, 200, 0, 0, 384, 600);
-    CP_Page_DrawBox(h, 0, 0, 384, 600, 2, 1);
+    // CP_Page_DrawBox(h, 0, 0, 384, 600, 2, 1);
     CP_Page_DrawText(h, 0, 0, "12345678901234567890");
     CP_Page_PrintPage(h);
     bool result = CP_Page_ExitPageMode(h);
@@ -394,15 +394,20 @@ void Test_Page_DrawTextInUTF8(void * h)
 
 void Test_Page_DrawTextInGBK(void * h)
 {
-    const wchar_t *str = L"1234567890\r\nabcdefghijklmnopqrstuvwxyz\r\n你好，欢迎使用！\r\n你號，歡迎使用！\r\n";
+    // const wchar_t *str = L"1234567890\r\nabcdefghijklmnopqrstuvwxyz\r\n你好，欢迎使用！\r\n你號，歡迎使用！\r\n";
+    // const wchar_t *str = L"software engineering 土不 ！！！\n";
+    const wchar_t *str = L"明天睡起来一定要记得，把这个整个函数库的每个函数都compile成单独的exe，然后把每个bin引用在python来做一层底层硬件的python api，这样能直接用python来和底层系统交互，python 女子，cmake make c cpp 土不，\n";
 
     CP_Pos_SetMultiByteMode(h);
     CP_Pos_SetMultiByteEncoding(h, CP_MultiByteEncoding_GBK);
 
-    CP_Page_SelectPageModeEx(h, 200, 200, 0, 0, 384, 600);
-    CP_Page_DrawBox(h, 0, 0, 384, 600, 2, 1);
+    // CP_Page_SelectPageModeEx(h, 200, 200, 0, 0, 384, 600);
+    // CP_Page_DrawBox(h, 0, 0, 384, 600, 2, 1);
+    // CP_Page_PrintPage(h);
     CP_Page_DrawTextInGBK(h, 0, 0, str);
     CP_Page_PrintPage(h);
+    CP_Pos_FeedAndHalfCutPaper(h);
+
     bool result = CP_Page_ExitPageMode(h);
     if (!result)
         ShowMessage("Write failed");
@@ -426,18 +431,22 @@ void Test_Page_DrawTextInBIG5(void * h)
 
 void Test_Page_DrawTextInShiftJIS(void * h)
 {
+    // const wchar_t *str =
+    //                 L"1234567890\r\n"
+    //                 L"abcdefghijklmnopqrstuvwxyz\r\n"
+    //                 L"こんにちは\r\n";
     const wchar_t *str =
-                    L"1234567890\r\n"
-                    L"abcdefghijklmnopqrstuvwxyz\r\n"
-                    L"こんにちは\r\n";
+                    L"これで制作展も何とかなるかもしれないね、やってるうちにいろんなことが上手くなってる\r\n";
 
     CP_Pos_SetMultiByteMode(h);
     CP_Pos_SetMultiByteEncoding(h, CP_MultiByteEncoding_ShiftJIS);
 
-    CP_Page_SelectPageModeEx(h, 200, 200, 0, 0, 384, 600);
-    CP_Page_DrawBox(h, 0, 0, 384, 600, 2, 1);
+    // CP_Page_SelectPageModeEx(h, 200, 200, 0, 0, 384, 600);
+    // CP_Page_DrawBox(h, 0, 0, 384, 600, 2, 1);
     CP_Page_DrawTextInShiftJIS(h, 0, 0, str);
     CP_Page_PrintPage(h);
+    CP_Pos_FeedAndHalfCutPaper(h);
+
     bool result = CP_Page_ExitPageMode(h);
     if (!result)
         ShowMessage("Write failed");

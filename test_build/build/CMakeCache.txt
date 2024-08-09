@@ -145,7 +145,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=execute_print
+CMAKE_PROJECT_NAME:STATIC=printer_control
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -210,10 +210,10 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-execute_print_BINARY_DIR:STATIC=/home/ubuntu/thermal-printer-controller/test_build/build
+printer_control_BINARY_DIR:STATIC=/home/ubuntu/thermal-printer-controller/test_build/build
 
 //Value Computed by CMake
-execute_print_SOURCE_DIR:STATIC=/home/ubuntu/thermal-printer-controller/test_build
+printer_control_SOURCE_DIR:STATIC=/home/ubuntu/thermal-printer-controller/test_build
 
 
 ########################

@@ -53,7 +53,8 @@ CMAKE_BINARY_DIR = /home/ubuntu/thermal-printer-controller/test_build/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/execute_print.dir/all
+all: CMakeFiles/Picture_printer.dir/all
+all: CMakeFiles/Test_print.dir/all
 
 .PHONY : all
 
@@ -63,36 +64,64 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/execute_print.dir/clean
+clean: CMakeFiles/Picture_printer.dir/clean
+clean: CMakeFiles/Test_print.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/execute_print.dir
+# Target rules for target CMakeFiles/Picture_printer.dir
 
 # All Build rule for target.
-CMakeFiles/execute_print.dir/all:
-	$(MAKE) -f CMakeFiles/execute_print.dir/build.make CMakeFiles/execute_print.dir/depend
-	$(MAKE) -f CMakeFiles/execute_print.dir/build.make CMakeFiles/execute_print.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/thermal-printer-controller/test_build/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target execute_print"
-.PHONY : CMakeFiles/execute_print.dir/all
+CMakeFiles/Picture_printer.dir/all:
+	$(MAKE) -f CMakeFiles/Picture_printer.dir/build.make CMakeFiles/Picture_printer.dir/depend
+	$(MAKE) -f CMakeFiles/Picture_printer.dir/build.make CMakeFiles/Picture_printer.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/thermal-printer-controller/test_build/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target Picture_printer"
+.PHONY : CMakeFiles/Picture_printer.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/execute_print.dir/rule: cmake_check_build_system
+CMakeFiles/Picture_printer.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/thermal-printer-controller/test_build/build/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/execute_print.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Picture_printer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/thermal-printer-controller/test_build/build/CMakeFiles 0
-.PHONY : CMakeFiles/execute_print.dir/rule
+.PHONY : CMakeFiles/Picture_printer.dir/rule
 
 # Convenience name for target.
-execute_print: CMakeFiles/execute_print.dir/rule
+Picture_printer: CMakeFiles/Picture_printer.dir/rule
 
-.PHONY : execute_print
+.PHONY : Picture_printer
 
 # clean rule for target.
-CMakeFiles/execute_print.dir/clean:
-	$(MAKE) -f CMakeFiles/execute_print.dir/build.make CMakeFiles/execute_print.dir/clean
-.PHONY : CMakeFiles/execute_print.dir/clean
+CMakeFiles/Picture_printer.dir/clean:
+	$(MAKE) -f CMakeFiles/Picture_printer.dir/build.make CMakeFiles/Picture_printer.dir/clean
+.PHONY : CMakeFiles/Picture_printer.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Test_print.dir
+
+# All Build rule for target.
+CMakeFiles/Test_print.dir/all:
+	$(MAKE) -f CMakeFiles/Test_print.dir/build.make CMakeFiles/Test_print.dir/depend
+	$(MAKE) -f CMakeFiles/Test_print.dir/build.make CMakeFiles/Test_print.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/thermal-printer-controller/test_build/build/CMakeFiles --progress-num=6,7,8,9,10 "Built target Test_print"
+.PHONY : CMakeFiles/Test_print.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Test_print.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/thermal-printer-controller/test_build/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Test_print.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/thermal-printer-controller/test_build/build/CMakeFiles 0
+.PHONY : CMakeFiles/Test_print.dir/rule
+
+# Convenience name for target.
+Test_print: CMakeFiles/Test_print.dir/rule
+
+.PHONY : Test_print
+
+# clean rule for target.
+CMakeFiles/Test_print.dir/clean:
+	$(MAKE) -f CMakeFiles/Test_print.dir/build.make CMakeFiles/Test_print.dir/clean
+.PHONY : CMakeFiles/Test_print.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -1,1 +1,0 @@
-x86_64-linux-gnu-gcc     CMakeFiles/execute_print.dir/src/main.cpp.o CMakeFiles/execute_print.dir/src/cmdtestfunction.cpp.o CMakeFiles/execute_print.dir/src/cmdtestunit.cpp.o CMakeFiles/execute_print.dir/src/cmdtestutils.cpp.o  -o execute_print  ../lib/libautoreplyprint.a -lstdc++ -lm -lpthread 

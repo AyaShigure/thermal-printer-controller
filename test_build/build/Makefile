@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/ubuntu/thermal-printer-controller/test_build/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,17 +111,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named execute_print
+# Target rules for targets named Picture_printer
 
 # Build rule for target.
-execute_print: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 execute_print
-.PHONY : execute_print
+Picture_printer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Picture_printer
+.PHONY : Picture_printer
 
 # fast build rule for target.
-execute_print/fast:
-	$(MAKE) -f CMakeFiles/execute_print.dir/build.make CMakeFiles/execute_print.dir/build
-.PHONY : execute_print/fast
+Picture_printer/fast:
+	$(MAKE) -f CMakeFiles/Picture_printer.dir/build.make CMakeFiles/Picture_printer.dir/build
+.PHONY : Picture_printer/fast
+
+#=============================================================================
+# Target rules for targets named Test_print
+
+# Build rule for target.
+Test_print: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test_print
+.PHONY : Test_print
+
+# fast build rule for target.
+Test_print/fast:
+	$(MAKE) -f CMakeFiles/Test_print.dir/build.make CMakeFiles/Test_print.dir/build
+.PHONY : Test_print/fast
 
 src/cmdtestfunction.o: src/cmdtestfunction.cpp.o
 
@@ -129,7 +142,8 @@ src/cmdtestfunction.o: src/cmdtestfunction.cpp.o
 
 # target to build an object file
 src/cmdtestfunction.cpp.o:
-	$(MAKE) -f CMakeFiles/execute_print.dir/build.make CMakeFiles/execute_print.dir/src/cmdtestfunction.cpp.o
+	$(MAKE) -f CMakeFiles/Picture_printer.dir/build.make CMakeFiles/Picture_printer.dir/src/cmdtestfunction.cpp.o
+	$(MAKE) -f CMakeFiles/Test_print.dir/build.make CMakeFiles/Test_print.dir/src/cmdtestfunction.cpp.o
 .PHONY : src/cmdtestfunction.cpp.o
 
 src/cmdtestfunction.i: src/cmdtestfunction.cpp.i
@@ -138,7 +152,8 @@ src/cmdtestfunction.i: src/cmdtestfunction.cpp.i
 
 # target to preprocess a source file
 src/cmdtestfunction.cpp.i:
-	$(MAKE) -f CMakeFiles/execute_print.dir/build.make CMakeFiles/execute_print.dir/src/cmdtestfunction.cpp.i
+	$(MAKE) -f CMakeFiles/Picture_printer.dir/build.make CMakeFiles/Picture_printer.dir/src/cmdtestfunction.cpp.i
+	$(MAKE) -f CMakeFiles/Test_print.dir/build.make CMakeFiles/Test_print.dir/src/cmdtestfunction.cpp.i
 .PHONY : src/cmdtestfunction.cpp.i
 
 src/cmdtestfunction.s: src/cmdtestfunction.cpp.s
@@ -147,7 +162,8 @@ src/cmdtestfunction.s: src/cmdtestfunction.cpp.s
 
 # target to generate assembly for a file
 src/cmdtestfunction.cpp.s:
-	$(MAKE) -f CMakeFiles/execute_print.dir/build.make CMakeFiles/execute_print.dir/src/cmdtestfunction.cpp.s
+	$(MAKE) -f CMakeFiles/Picture_printer.dir/build.make CMakeFiles/Picture_printer.dir/src/cmdtestfunction.cpp.s
+	$(MAKE) -f CMakeFiles/Test_print.dir/build.make CMakeFiles/Test_print.dir/src/cmdtestfunction.cpp.s
 .PHONY : src/cmdtestfunction.cpp.s
 
 src/cmdtestunit.o: src/cmdtestunit.cpp.o
@@ -156,7 +172,8 @@ src/cmdtestunit.o: src/cmdtestunit.cpp.o
 
 # target to build an object file
 src/cmdtestunit.cpp.o:
-	$(MAKE) -f CMakeFiles/execute_print.dir/build.make CMakeFiles/execute_print.dir/src/cmdtestunit.cpp.o
+	$(MAKE) -f CMakeFiles/Picture_printer.dir/build.make CMakeFiles/Picture_printer.dir/src/cmdtestunit.cpp.o
+	$(MAKE) -f CMakeFiles/Test_print.dir/build.make CMakeFiles/Test_print.dir/src/cmdtestunit.cpp.o
 .PHONY : src/cmdtestunit.cpp.o
 
 src/cmdtestunit.i: src/cmdtestunit.cpp.i
@@ -165,7 +182,8 @@ src/cmdtestunit.i: src/cmdtestunit.cpp.i
 
 # target to preprocess a source file
 src/cmdtestunit.cpp.i:
-	$(MAKE) -f CMakeFiles/execute_print.dir/build.make CMakeFiles/execute_print.dir/src/cmdtestunit.cpp.i
+	$(MAKE) -f CMakeFiles/Picture_printer.dir/build.make CMakeFiles/Picture_printer.dir/src/cmdtestunit.cpp.i
+	$(MAKE) -f CMakeFiles/Test_print.dir/build.make CMakeFiles/Test_print.dir/src/cmdtestunit.cpp.i
 .PHONY : src/cmdtestunit.cpp.i
 
 src/cmdtestunit.s: src/cmdtestunit.cpp.s
@@ -174,7 +192,8 @@ src/cmdtestunit.s: src/cmdtestunit.cpp.s
 
 # target to generate assembly for a file
 src/cmdtestunit.cpp.s:
-	$(MAKE) -f CMakeFiles/execute_print.dir/build.make CMakeFiles/execute_print.dir/src/cmdtestunit.cpp.s
+	$(MAKE) -f CMakeFiles/Picture_printer.dir/build.make CMakeFiles/Picture_printer.dir/src/cmdtestunit.cpp.s
+	$(MAKE) -f CMakeFiles/Test_print.dir/build.make CMakeFiles/Test_print.dir/src/cmdtestunit.cpp.s
 .PHONY : src/cmdtestunit.cpp.s
 
 src/cmdtestutils.o: src/cmdtestutils.cpp.o
@@ -183,7 +202,8 @@ src/cmdtestutils.o: src/cmdtestutils.cpp.o
 
 # target to build an object file
 src/cmdtestutils.cpp.o:
-	$(MAKE) -f CMakeFiles/execute_print.dir/build.make CMakeFiles/execute_print.dir/src/cmdtestutils.cpp.o
+	$(MAKE) -f CMakeFiles/Picture_printer.dir/build.make CMakeFiles/Picture_printer.dir/src/cmdtestutils.cpp.o
+	$(MAKE) -f CMakeFiles/Test_print.dir/build.make CMakeFiles/Test_print.dir/src/cmdtestutils.cpp.o
 .PHONY : src/cmdtestutils.cpp.o
 
 src/cmdtestutils.i: src/cmdtestutils.cpp.i
@@ -192,7 +212,8 @@ src/cmdtestutils.i: src/cmdtestutils.cpp.i
 
 # target to preprocess a source file
 src/cmdtestutils.cpp.i:
-	$(MAKE) -f CMakeFiles/execute_print.dir/build.make CMakeFiles/execute_print.dir/src/cmdtestutils.cpp.i
+	$(MAKE) -f CMakeFiles/Picture_printer.dir/build.make CMakeFiles/Picture_printer.dir/src/cmdtestutils.cpp.i
+	$(MAKE) -f CMakeFiles/Test_print.dir/build.make CMakeFiles/Test_print.dir/src/cmdtestutils.cpp.i
 .PHONY : src/cmdtestutils.cpp.i
 
 src/cmdtestutils.s: src/cmdtestutils.cpp.s
@@ -201,35 +222,63 @@ src/cmdtestutils.s: src/cmdtestutils.cpp.s
 
 # target to generate assembly for a file
 src/cmdtestutils.cpp.s:
-	$(MAKE) -f CMakeFiles/execute_print.dir/build.make CMakeFiles/execute_print.dir/src/cmdtestutils.cpp.s
+	$(MAKE) -f CMakeFiles/Picture_printer.dir/build.make CMakeFiles/Picture_printer.dir/src/cmdtestutils.cpp.s
+	$(MAKE) -f CMakeFiles/Test_print.dir/build.make CMakeFiles/Test_print.dir/src/cmdtestutils.cpp.s
 .PHONY : src/cmdtestutils.cpp.s
 
-src/main.o: src/main.cpp.o
+src/main_Picture_printer.o: src/main_Picture_printer.cpp.o
 
-.PHONY : src/main.o
+.PHONY : src/main_Picture_printer.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/execute_print.dir/build.make CMakeFiles/execute_print.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/main_Picture_printer.cpp.o:
+	$(MAKE) -f CMakeFiles/Picture_printer.dir/build.make CMakeFiles/Picture_printer.dir/src/main_Picture_printer.cpp.o
+.PHONY : src/main_Picture_printer.cpp.o
 
-src/main.i: src/main.cpp.i
+src/main_Picture_printer.i: src/main_Picture_printer.cpp.i
 
-.PHONY : src/main.i
+.PHONY : src/main_Picture_printer.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/execute_print.dir/build.make CMakeFiles/execute_print.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/main_Picture_printer.cpp.i:
+	$(MAKE) -f CMakeFiles/Picture_printer.dir/build.make CMakeFiles/Picture_printer.dir/src/main_Picture_printer.cpp.i
+.PHONY : src/main_Picture_printer.cpp.i
 
-src/main.s: src/main.cpp.s
+src/main_Picture_printer.s: src/main_Picture_printer.cpp.s
 
-.PHONY : src/main.s
+.PHONY : src/main_Picture_printer.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/execute_print.dir/build.make CMakeFiles/execute_print.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/main_Picture_printer.cpp.s:
+	$(MAKE) -f CMakeFiles/Picture_printer.dir/build.make CMakeFiles/Picture_printer.dir/src/main_Picture_printer.cpp.s
+.PHONY : src/main_Picture_printer.cpp.s
+
+src/main_Test_print.o: src/main_Test_print.cpp.o
+
+.PHONY : src/main_Test_print.o
+
+# target to build an object file
+src/main_Test_print.cpp.o:
+	$(MAKE) -f CMakeFiles/Test_print.dir/build.make CMakeFiles/Test_print.dir/src/main_Test_print.cpp.o
+.PHONY : src/main_Test_print.cpp.o
+
+src/main_Test_print.i: src/main_Test_print.cpp.i
+
+.PHONY : src/main_Test_print.i
+
+# target to preprocess a source file
+src/main_Test_print.cpp.i:
+	$(MAKE) -f CMakeFiles/Test_print.dir/build.make CMakeFiles/Test_print.dir/src/main_Test_print.cpp.i
+.PHONY : src/main_Test_print.cpp.i
+
+src/main_Test_print.s: src/main_Test_print.cpp.s
+
+.PHONY : src/main_Test_print.s
+
+# target to generate assembly for a file
+src/main_Test_print.cpp.s:
+	$(MAKE) -f CMakeFiles/Test_print.dir/build.make CMakeFiles/Test_print.dir/src/main_Test_print.cpp.s
+.PHONY : src/main_Test_print.cpp.s
 
 # Help Target
 help:
@@ -237,9 +286,10 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... execute_print"
+	@echo "... rebuild_cache"
+	@echo "... Picture_printer"
+	@echo "... Test_print"
 	@echo "... src/cmdtestfunction.o"
 	@echo "... src/cmdtestfunction.i"
 	@echo "... src/cmdtestfunction.s"
@@ -249,9 +299,12 @@ help:
 	@echo "... src/cmdtestutils.o"
 	@echo "... src/cmdtestutils.i"
 	@echo "... src/cmdtestutils.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... src/main_Picture_printer.o"
+	@echo "... src/main_Picture_printer.i"
+	@echo "... src/main_Picture_printer.s"
+	@echo "... src/main_Test_print.o"
+	@echo "... src/main_Test_print.i"
+	@echo "... src/main_Test_print.s"
 .PHONY : help
 
 
