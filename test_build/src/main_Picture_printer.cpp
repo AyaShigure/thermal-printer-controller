@@ -4,24 +4,76 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <iostream>
+
+
+// char to wchar_t conversition utility function
+#include <cwchar>   // For mbstowcs
+#include <clocale>  // For setlocale
+#include <cstring>  // For strlen
+wchar_t* convertToWideChar(const char* charStr) {
+    // Determine the required length for the wide string
+    std::size_t length = std::mbstowcs(nullptr, charStr, 0);
+    if (length == static_cast<std::size_t>(-1)) {
+        std::cerr << "Error: Invalid multibyte sequence encountered." << std::endl;
+        return nullptr;
+    }
+
+    // Allocate memory for the wide character string
+    wchar_t* wideStr = new wchar_t[length + 1];
+
+    // Perform the conversion
+    std::mbstowcs(wideStr, charStr, length + 1);
+
+    return wideStr;
+}
+
+
+
+
 
 int main(int argc, char *argv[])
 {
+    /*
+        argv[0] : This function
+        argv[1] : Serial port name
+        argv[2] : String to print
+    */
+
+    // Set the locale for the conversion to support the full character set
+    std::setlocale(LC_ALL, "");
+    const char* charStr = argv[2];
+    wchar_t* wideStr = convertToWideChar(charStr);
+
     // check parameters
-    if (argc != 3) {
-        ShowMessage("Usage: program port_name function_index");
-        ShowMessage("Example: ./test /dev/usb/lp0 0");
+    // if (argc != 3) {
+    //     std::cout << std::endl;
+    //     ShowMessage("Usage: program port_name function_index");
+    //     ShowMessage("Example: ./test /dev/usb/lp0 0");
+    //     std::cout << std::endl;
+    // }
+    ShowMessage("\nPrinting function arguements.\n");
+    for(int i = 0; i < argc; i++){
+        std::cout << "** Argv[" << i << "]: " << argv[i] << std::endl; 
+    }
+    if(argc != 3){
+        std::cout << std::endl;
+        ShowMessage("***************************************************");
+        ShowMessage("Invilad arguments. Exiting...");
+        std::cout << std::endl;
+        return 0;
     }
 
+
     // get parameters
-    const char *port_name = "/dev/usb/lp0";
-    if (argc >= 2) {
-        port_name = argv[1];
-    }
-    int function_index = 0;
-    if (argc >= 3) {
-        function_index = atoi(argv[2]);
-    }
+    const char *port_name = argv[1];
+    // if (argc >= 2) {
+    //     port_name = argv[1];
+    // }
+    // int function_index = 0;
+    // if (argc >= 3) {
+    //     function_index = atoi(argv[2]);
+    // }
 
     // show function list
     if (1) {
@@ -51,16 +103,16 @@ int main(int argc, char *argv[])
         return 0;
     }
 
+
+    // wchar_t strToPrint = *argv[2];
     // test function
     if (h) {
-        if ((function_index >= 0) && (function_index < (int)listCmdTestUnitSize)) {
-            ShowMessage(listCmdTestUnit[function_index].cmdTestDescription);
-            // listCmdTestUnit[function_index].cmdTestFunction(h);
-            // Test_Page_DrawTextInShiftJIS(h);
-            Test_Page_DrawTextInGBK(h);
-        }
+
+        Test_Page_DrawTextInGBK_AYA(h, wideStr);
+
         CP_Port_Close(h);
     }
 
+    delete[] wideStr; // Clean up the allocated memory
     return 0;
 }

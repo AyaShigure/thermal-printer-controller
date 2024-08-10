@@ -5,6 +5,8 @@
 #include <string.h>
 #include <time.h>
 #include <math.h>
+#include <ostream>
+#include <iostream>
 
 void Test_Page_SampleTicket_58mm_1(void * h)
 {
@@ -397,7 +399,6 @@ void Test_Page_DrawTextInGBK(void * h)
     // const wchar_t *str = L"1234567890\r\nabcdefghijklmnopqrstuvwxyz\r\n你好，欢迎使用！\r\n你號，歡迎使用！\r\n";
     // const wchar_t *str = L"software engineering 土不 ！！！\n";
     const wchar_t *str = L"明天睡起来一定要记得，把这个整个函数库的每个函数都compile成单独的exe，然后把每个bin引用在python来做一层底层硬件的python api，这样能直接用python来和底层系统交互，python 女子，cmake make c cpp 土不，\n";
-
     CP_Pos_SetMultiByteMode(h);
     CP_Pos_SetMultiByteEncoding(h, CP_MultiByteEncoding_GBK);
 
@@ -593,4 +594,37 @@ void Test_Page_DrawRasterImageFromFile(void * h)
     CP_Page_ExitPageMode(h);
 
     Test_Pos_QueryPrintResult(h);
+}
+
+// Custom functions
+
+void Test_Page_DrawTextInGBK_AYA(void * h, wchar_t * input_str)
+{
+    // const wchar_t *str = L"1234567890\r\nabcdefghijklmnopqrstuvwxyz\r\n你好，欢迎使用！\r\n你號，歡迎使用！\r\n";
+    // const wchar_t *str = L"software engineering 土不 ！！！\n";
+    const wchar_t *str = L"明天睡起来一定要记得，把这个整个函数库的每个函数都compile成单独的exe，然后把每个bin引用在python来做一层底层硬件的python api，这样能直接用python来和底层系统交互，python 女子，cmake make c cpp 土不，\n";
+    // const wchar_t *str = input_str; // print what is passed in
+
+
+    if (str) {
+        std::wcout << L"Converted Wide String: " << str << std::endl;
+        // delete[] input_str; // Clean up the allocated memory
+    }
+
+    const wchar_t *str2 =  L"Converted Wide String:中午 \n"; // print what is passed in
+
+
+    CP_Pos_SetMultiByteMode(h);
+    CP_Pos_SetMultiByteEncoding(h, CP_MultiByteEncoding_GBK);
+
+    // CP_Page_SelectPageModeEx(h, 200, 200, 0, 0, 384, 600);
+    // CP_Page_DrawBox(h, 0, 0, 384, 600, 2, 1);
+    // CP_Page_PrintPage(h);
+    CP_Page_DrawTextInGBK(h, 0, 0, input_str);
+    CP_Page_PrintPage(h);
+    CP_Pos_FeedAndHalfCutPaper(h);
+
+    bool result = CP_Page_ExitPageMode(h);
+    if (!result)
+        ShowMessage("Write failed");
 }

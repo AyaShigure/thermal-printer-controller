@@ -18,3 +18,7 @@ Each functionality provided in C++ is compiled separately and included in a pyth
   - `g++-x86-64-linux-gnu`
 - **CMake** and **Make** for build automation.
 - **Box64** to run `x86_64` binaries on ARM.
+
+
+# Notes:
+1.  Strings which are sent to the printer must end with a '\n'.

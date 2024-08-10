@@ -132,4 +132,13 @@ void Test_Label_DrawLine(void * h);
 void Test_Label_DrawRect(void * h);
 void Test_Label_DrawBox(void * h);
 
+
+// Custom functions
+
+void Test_Page_DrawTextInGBK_AYA(void * h, wchar_t * input_str);
+
+
+
+
+
 #endif // CMDTESTFUNCTION_H

@@ -29,4 +29,8 @@ time.h
 -
 math.h
 -
+ostream
+-
+iostream
+-
 
