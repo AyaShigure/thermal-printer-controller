@@ -24,7 +24,8 @@ int main(int argc, char *argv[])
         std::cout << std::endl;
         return 0;
     }
-
+    
+    const char *port_name = argv[1];
     // open port
     void *h = 0;
     if (strstr(port_name, "/dev/usb/lp")) {

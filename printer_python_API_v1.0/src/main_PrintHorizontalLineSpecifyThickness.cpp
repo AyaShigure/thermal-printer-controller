@@ -10,6 +10,9 @@ int main(int argc, char *argv[])
     /*
         argv[0] : This function
         argv[1] : Serial port name
+        argv[2] : nLineStartPosition
+        argv[3] : nLineEndPosition
+        argv[4] : nLineThickness
     */
 
     ShowMessage("\nPrinting function arguements.\n");
@@ -17,7 +20,7 @@ int main(int argc, char *argv[])
         std::cout << "** Argv[" << i << "]: " << argv[i] << std::endl; 
     }
 
-    if(argc != 2){
+    if(argc != 5){
         std::cout << std::endl;
         ShowMessage("***************************************************");
         ShowMessage("Invilad arguments. Exiting...(Double check the arguments passed in.)");
@@ -40,10 +43,12 @@ int main(int argc, char *argv[])
         return 0;
     }
 
+    int nLineStartPosition = argv[2];
+    int nLineEndPosition = argv[3];
+    int nLineThickness = argv[4];
     // Send cut paper command
     if (h) {
-        CP_Pos_FeedLine(h, 2);
-        CP_Pos_FullCutPaper(h);
+        CP_Pos_PrintHorizontalLineSpecifyThickness(h,nLineStartPosition,nLineEndPosition,nLineThickness);
         CP_Port_Close(h);
     }
 

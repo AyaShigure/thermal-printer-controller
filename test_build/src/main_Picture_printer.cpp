@@ -110,10 +110,11 @@ int main(int argc, char *argv[])
 
         // Test_Page_DrawTextInGBK_AYA(h, wideStr);
 
-        CP_Pos_FeedLine(h, 1);
-        // CP_Pos_PrintSelfTestPage(h);
-        CP_Pos_PrintHorizontalLineSpecifyThickness(h,0,500,3);
-        CP_Pos_FeedLine(h, 3);
+        // CP_Pos_FeedLine(h, 1);
+        // // CP_Pos_PrintSelfTestPage(h);
+        // CP_Pos_PrintHorizontalLineSpecifyThickness(h,0,500,3);
+        // CP_Pos_FeedLine(h, 3);
+        CP_Pos_FeedDot(h,50);
         // CP_Pos_FullCutPaper(h);
         CP_Pos_HalfCutPaper(h);
 

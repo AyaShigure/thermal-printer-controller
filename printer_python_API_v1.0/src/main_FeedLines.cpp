@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
         return 0;
     }
 
+    const char *port_name = argv[1];
     // open port
     void *h = 0;
     if (strstr(port_name, "/dev/usb/lp")) {
@@ -40,7 +41,7 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    int nFeedLines = argv[2]
+    int nFeedLines = (int)argv[2];
     // Send cut paper command
     if (h) {
         CP_Pos_FeedLine(h, nFeedLines);

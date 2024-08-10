@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
     /*
         argv[0] : This function
         argv[1] : Serial port name
+        argv[2] : Feed dot number
     */
 
     ShowMessage("\nPrinting function arguements.\n");
@@ -17,14 +18,14 @@ int main(int argc, char *argv[])
         std::cout << "** Argv[" << i << "]: " << argv[i] << std::endl; 
     }
 
-    if(argc != 2){
+    if(argc != 3){
         std::cout << std::endl;
         ShowMessage("***************************************************");
         ShowMessage("Invilad arguments. Exiting...(Double check the arguments passed in.)");
         std::cout << std::endl;
         return 0;
     }
-    
+
     const char *port_name = argv[1];
     // open port
     void *h = 0;
@@ -40,10 +41,10 @@ int main(int argc, char *argv[])
         return 0;
     }
 
+    int nDots = (int)argv[2];
     // Send cut paper command
     if (h) {
-        CP_Pos_FeedLine(h, 2);
-        CP_Pos_FullCutPaper(h);
+        CP_Pos_FeedDot(h, nDots);
         CP_Port_Close(h);
     }
 
