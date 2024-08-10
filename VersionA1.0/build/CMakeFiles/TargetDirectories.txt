@@ -1,0 +1,10 @@
+/home/ubuntu/thermal-printer-controller/VersionA1.0/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/thermal-printer-controller/VersionA1.0/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/thermal-printer-controller/VersionA1.0/build/CMakeFiles/PrintRasterImage.dir
+/home/ubuntu/thermal-printer-controller/VersionA1.0/build/CMakeFiles/FeedLines.dir
+/home/ubuntu/thermal-printer-controller/VersionA1.0/build/CMakeFiles/PrintTextUTF8.dir
+/home/ubuntu/thermal-printer-controller/VersionA1.0/build/CMakeFiles/FeedAndHalfCut.dir
+/home/ubuntu/thermal-printer-controller/VersionA1.0/build/CMakeFiles/PrintSelftest.dir
+/home/ubuntu/thermal-printer-controller/VersionA1.0/build/CMakeFiles/PrintHorizontalLineSpecifyThickness.dir
+/home/ubuntu/thermal-printer-controller/VersionA1.0/build/CMakeFiles/FeedDot.dir
+/home/ubuntu/thermal-printer-controller/VersionA1.0/build/CMakeFiles/FeedAndFullCut.dir

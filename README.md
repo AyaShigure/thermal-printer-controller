@@ -31,4 +31,6 @@ Each functionality provided in C++ is compiled separately and included in a pyth
 1.  Strings that are sent to the printer must end with a '\n'.
 2.  Printing text and printing image should be more than enough in most cases.
 3.  More of the original functionalities (like printing QR codes and barcodes) are absent in version 1.0 since they are not needed in my projects for the iiiExhibition2024 at the University of Tokyo.
-4.  
+
+# Notes for myself(2024/8/11):
+1.  There are still more functions from the origional API, need to explore the setprinting speed and density settings for better printing quality.

@@ -1,0 +1,1 @@
+x86_64-linux-gnu-gcc     CMakeFiles/PrintHorizontalLineSpecifyThickness.dir/src/main_PrintHorizontalLineSpecifyThickness.cpp.o CMakeFiles/PrintHorizontalLineSpecifyThickness.dir/src/printerutilities.cpp.o  -o cpp_bin/PrintHorizontalLineSpecifyThickness  ../lib/libautoreplyprint.a -lstdc++ -lm -lpthread 

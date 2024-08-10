@@ -1,0 +1,1 @@
+x86_64-linux-gnu-gcc     CMakeFiles/FeedAndHalfCut.dir/src/main_FeedAndHalfCut.cpp.o CMakeFiles/FeedAndHalfCut.dir/src/printerutilities.cpp.o  -o cpp_bin/FeedAndHalfCut  ../lib/libautoreplyprint.a -lstdc++ -lm -lpthread 

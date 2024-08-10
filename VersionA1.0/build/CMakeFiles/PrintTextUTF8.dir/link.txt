@@ -1,0 +1,1 @@
+x86_64-linux-gnu-gcc     CMakeFiles/PrintTextUTF8.dir/src/main_PrintTextUTF8.cpp.o CMakeFiles/PrintTextUTF8.dir/src/printerutilities.cpp.o  -o cpp_bin/PrintTextUTF8  ../lib/libautoreplyprint.a -lstdc++ -lm -lpthread 

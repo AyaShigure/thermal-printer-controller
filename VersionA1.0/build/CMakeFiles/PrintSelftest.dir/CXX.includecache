@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/printerutilities.h
+autoreplyprint.h
+../include/autoreplyprint.h
+
+../lib/autoreplyprint.h
+
+/home/ubuntu/thermal-printer-controller/VersionA1.0/src/main_PrintSelftest.cpp
+printerutilities.h
+/home/ubuntu/thermal-printer-controller/VersionA1.0/src/printerutilities.h
+stdlib.h
+-
+string.h
+-
+stdio.h
+-
+iostream
+-
+
+/home/ubuntu/thermal-printer-controller/VersionA1.0/src/printerutilities.cpp
+printerutilities.h
+/home/ubuntu/thermal-printer-controller/VersionA1.0/src/printerutilities.h
+stdio.h
+/home/ubuntu/thermal-printer-controller/VersionA1.0/src/stdio.h
+iostream
+-
+cwchar
+-
+clocale
+-
+cstring
+-
+cstdlib
+-
+cerrno
+-
+climits
+-
+

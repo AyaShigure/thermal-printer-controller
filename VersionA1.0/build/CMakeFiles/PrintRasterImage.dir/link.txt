@@ -1,0 +1,1 @@
+x86_64-linux-gnu-gcc     CMakeFiles/PrintRasterImage.dir/src/main_PrintRasterImage.cpp.o CMakeFiles/PrintRasterImage.dir/src/printerutilities.cpp.o  -o cpp_bin/PrintRasterImage  ../lib/libautoreplyprint.a -lstdc++ -lm -lpthread 
