@@ -8,29 +8,35 @@
 
 ../include/cmdtestfunction.h
 
+../include/cmdtestunit.h
+stdlib.h
+-
+
 ../include/cmdtestutils.h
 autoreplyprint.h
 ../include/autoreplyprint.h
 
 ../lib/autoreplyprint.h
 
-/home/ubuntu/thermal-printer-controller/test_build/src/cmdtestfunction.cpp
+/home/ubuntu/thermal-printer-controller/test_build/src/main_Picture_printer.cpp
 cmdtestfunction.h
 /home/ubuntu/thermal-printer-controller/test_build/src/cmdtestfunction.h
 cmdtestutils.h
 /home/ubuntu/thermal-printer-controller/test_build/src/cmdtestutils.h
-stdio.h
--
+cmdtestunit.h
+/home/ubuntu/thermal-printer-controller/test_build/src/cmdtestunit.h
 stdlib.h
 -
 string.h
 -
-time.h
--
-math.h
--
-ostream
+stdio.h
 -
 iostream
+-
+cwchar
+-
+clocale
+-
+cstring
 -
 

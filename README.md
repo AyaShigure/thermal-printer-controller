@@ -1,7 +1,11 @@
-# Thermal printer controller for Raspberry Pis
+# Thermal printer controller for Raspberry Pis (Version1.0)
 
 ### 2024.8.10 notes:
-This software package is a complete python API for controlling the thermal printer module.(Still under constructions)
+This software package is a python API for controlling the thermal printer module.(Still under constructions)
+In the current version1.0 python API build, functionalities below are included.
+1.  Printing text
+2.  Printing raster image
+3.  Feed and cut paper
 
 This software package is based on what is provided by [Xiamen MY Electronic Technology Co.,Ltd](http://en.xmmydzkj.com/dom/down_list.php?username=xiamenminyoux&channel_id=18042624) on their thermal printer modules.
 
@@ -20,5 +24,7 @@ Each functionality provided in C++ is compiled separately and included in a pyth
 - **Box64** to run `x86_64` binaries on ARM.
 
 
-# Notes:
-1.  Strings which are sent to the printer must end with a '\n'.
+# Notes for myself(2024/8/10):
+1.  Strings that are sent to the printer must end with a '\n'.
+2.  Printing text and printing image should be more than enough in most cases.
+3.  More of the original functionalities (like printing QR codes and barcodes) are absent in version 1.0 since they are not needed in my projects for the iiiExhibition2024 at the University of Tokyo.

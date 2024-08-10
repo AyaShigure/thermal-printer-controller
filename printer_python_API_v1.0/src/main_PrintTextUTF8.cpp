@@ -1,6 +1,4 @@
-#include "cmdtestfunction.h"
-#include "cmdtestutils.h"
-#include "cmdtestunit.h"
+#include "printerutilities.h"
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
@@ -11,7 +9,7 @@
 #include <cwchar>   // For mbstowcs
 #include <clocale>  // For setlocale
 #include <cstring>  // For strlen
-wchar_t* convertToWideChar(const char* charStr) {
+wchar_t *convertToWideChar(const char *charStr) {
     // Determine the required length for the wide string
     std::size_t length = std::mbstowcs(nullptr, charStr, 0);
     if (length == static_cast<std::size_t>(-1)) {
@@ -20,7 +18,7 @@ wchar_t* convertToWideChar(const char* charStr) {
     }
 
     // Allocate memory for the wide character string
-    wchar_t* wideStr = new wchar_t[length + 1];
+    wchar_t *wideStr = new wchar_t[length + 1];
 
     // Perform the conversion
     std::mbstowcs(wideStr, charStr, length + 1);
@@ -28,8 +26,18 @@ wchar_t* convertToWideChar(const char* charStr) {
     return wideStr;
 }
 
+void PrintTextUTF8(void *h, wchar_t *input_str)
+{
+    CP_Pos_SetMultiByteMode(h);
+    CP_Pos_SetMultiByteEncoding(h, CP_MultiByteEncoding_GBK);
 
+    CP_Page_DrawTextInGBK(h, 0, 0, input_str);
+    CP_Page_PrintPage(h);
 
+    bool result = CP_Page_ExitPageMode(h);
+    if (!result)
+        ShowMessage("Write failed");
+}
 
 
 int main(int argc, char *argv[])
@@ -40,18 +48,12 @@ int main(int argc, char *argv[])
         argv[2] : String to print
     */
 
+    const char *port_name = argv[1];
     // Set the locale for the conversion to support the full character set
     std::setlocale(LC_ALL, "");
     const char* charStr = argv[2];
     wchar_t* wideStr = convertToWideChar(charStr);
 
-    // check parameters
-    // if (argc != 3) {
-    //     std::cout << std::endl;
-    //     ShowMessage("Usage: program port_name function_index");
-    //     ShowMessage("Example: ./test /dev/usb/lp0 0");
-    //     std::cout << std::endl;
-    // }
     ShowMessage("\nPrinting function arguements.\n");
     for(int i = 0; i < argc; i++){
         std::cout << "** Argv[" << i << "]: " << argv[i] << std::endl; 
@@ -62,31 +64,6 @@ int main(int argc, char *argv[])
         ShowMessage("Invilad arguments. Exiting...");
         std::cout << std::endl;
         return 0;
-    }
-
-
-    // get parameters
-    const char *port_name = argv[1];
-    // if (argc >= 2) {
-    //     port_name = argv[1];
-    // }
-    // int function_index = 0;
-    // if (argc >= 3) {
-    //     function_index = atoi(argv[2]);
-    // }
-
-    // show function list
-    if (1) {
-        ShowMessage("\r\nfunction list:\r\n");
-
-        int i;
-        for (i = 0; i < (int)listCmdTestUnitSize; ++i) {
-            char message[100];
-            sprintf(message, "%d %s", i, listCmdTestUnit[i].cmdTestDescription);
-            ShowMessage(message);
-        }
-
-        ShowMessage("\r\n");
     }
 
     // open port
@@ -107,16 +84,7 @@ int main(int argc, char *argv[])
     // wchar_t strToPrint = *argv[2];
     // test function
     if (h) {
-
-        // Test_Page_DrawTextInGBK_AYA(h, wideStr);
-
-        CP_Pos_FeedLine(h, 1);
-        // CP_Pos_PrintSelfTestPage(h);
-        CP_Pos_PrintHorizontalLineSpecifyThickness(h,0,500,3);
-        CP_Pos_FeedLine(h, 3);
-        // CP_Pos_FullCutPaper(h);
-        CP_Pos_HalfCutPaper(h);
-
+        PrintTextUTF8(h, wideStr);
         CP_Port_Close(h);
     }
 
