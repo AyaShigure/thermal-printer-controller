@@ -1,4 +1,5 @@
 # Thermal printer controller for Raspberry Pis (VersionA1.0/VersionB1.0)
+## Working in progress..
 
 ### VersionA1.0:
 This software package is a python API for controlling the thermal printer module. In the current versionA1.0 python API build, functionalities below are included. Each of below function is a binary executable which could be called indivadually. For example, one could make thermal prints simply from Jupyter Lab while testing the contents of which are being printed.
