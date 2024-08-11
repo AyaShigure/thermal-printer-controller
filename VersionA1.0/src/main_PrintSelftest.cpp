@@ -42,6 +42,8 @@ int main(int argc, char *argv[])
 
     // Send cut paper command
     if (h) {
+        int printDensity = 30; // 30 seems to be the best quality
+        CP_Pos_SetPrintDensity(h, printDensity);
         CP_Pos_PrintSelfTestPage(h);
         CP_Port_Close(h);
     }

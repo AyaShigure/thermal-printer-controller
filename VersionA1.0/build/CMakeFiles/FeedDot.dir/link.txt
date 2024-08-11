@@ -1,1 +1,1 @@
-x86_64-linux-gnu-gcc     CMakeFiles/FeedDot.dir/src/main_FeedDot.cpp.o CMakeFiles/FeedDot.dir/src/printerutilities.cpp.o  -o cpp_bin/FeedDot  ../lib/libautoreplyprint.a -lstdc++ -lm -lpthread 
+x86_64-linux-gnu-gcc     CMakeFiles/FeedDot.dir/src/main_FeedDot.cpp.o CMakeFiles/FeedDot.dir/src/printerutilities.cpp.o  -o python_API/cpp_bin/FeedDot  ../lib/libautoreplyprint.a -lstdc++ -lm -lpthread 

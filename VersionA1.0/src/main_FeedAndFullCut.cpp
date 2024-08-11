@@ -42,6 +42,7 @@ int main(int argc, char *argv[])
 
     // Send cut paper command
     if (h) {
+        
         CP_Pos_FeedLine(h, 2);
         CP_Pos_FullCutPaper(h);
         CP_Port_Close(h);

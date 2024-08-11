@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/PrintTextUTF8.dir/src/main_PrintTextUTF8.cpp.o"
   "CMakeFiles/PrintTextUTF8.dir/src/printerutilities.cpp.o"
-  "cpp_bin/PrintTextUTF8"
-  "cpp_bin/PrintTextUTF8.pdb"
+  "python_API/cpp_bin/PrintTextUTF8"
+  "python_API/cpp_bin/PrintTextUTF8.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

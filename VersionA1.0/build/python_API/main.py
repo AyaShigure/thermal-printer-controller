@@ -1,45 +1,9 @@
 #!/usr/bin/env python3
-import os
-
-class thermoPrinter():
-    def __init__(self, port, cpp_bin_path):
-        self.port = port
-        self.cpp_bin_path = cpp_bin_path
-        pass
-
-    def FeedAndFullCut(self):    
-        print('Feeding & executing a full cut.')
-        os.system(f'sudo box64 {self.cpp_bin_path}/FeedAndFullCut {self.port}')
-
-    def FeedAndHalfCut(self):
-        print('Feeding & execut a half cut.')
-        os.system(f'sudo box64 {self.cpp_bin_path}/FeedAndHalfCut {self.port}')
-
-    def FeedDot(self, feed_dots_number):
-        print(f'Feeding {feed_dots_number} pixels.')
-        os.system(f'sudo box64 {self.cpp_bin_path}/FeedDot {self.port} {feed_dots_number}')
-
-    def FeedLines(self, feed_lines_number):
-        print(f'Feeding {feed_lines_number} lines.')
-        os.system(f'sudo box64 {self.cpp_bin_path}/FeedLines {self.port} {feed_lines_number}')
-
-    def PrintHorizontalLineSpecifyThickness(self, startPoint, endPoint, lineThickness):
-        os.system(f'sudo box64 {self.cpp_bin_path}/PrintHorizontalLineSpecifyThickness {self.port} {startPoint} {endPoint} {lineThickness}')
-
-    def PrintSelftest(self):
-        os.system(f'sudo box64 {self.cpp_bin_path}/PrintSelftest {self.port}')
-
-    def PrintRasterImage(self, imgPath):
-        print('Printing target .bmp file. (Note that the imgPath should be a absolute path)')
-        os.system(f'sudo box64 {self.cpp_bin_path}/PrintRasterImage {self.port} \"{imgPath}\"')
-
-    def PrintTextUTF8(self, str):
-        print('Printing.')
-        os.system(f'sudo box64 {self.cpp_bin_path}/PrintTextUTF8 {self.port} \"{str}\n\"')
+from printer_class import *
 
 
 if __name__ == '__main__':
-    # Settings
+    # Text to print
     port = '/dev/usb/lp0'
     cpp_bin_path = './cpp_bin'
 
@@ -61,21 +25,15 @@ if __name__ == '__main__':
     string_to_print_pt6 = ''' It can be said that this is an final ultimatum from the god to the people who can fight.
 これは抗える者たちに対する、神からの最後通告とも言えよう。'''
     
-
+    # Image to print
     script_path = os.getcwd()
-    imgPath = f'{script_path}/rsz_1logo.bmp'
+    imgPath = f'{script_path}/media/logo.bmp'
     print(imgPath)
-    # Printer obj
 
-
+    # Printer object
     printer = thermoPrinter(port, cpp_bin_path)
 
-    # printer.PrintTextUTF8(string_to_print)
-    # printer.PrintRasterImage(imgPath)
-
-
-
-
+    # Execute prints
     # printer.FeedLines(3)
     # printer.FeedAndHalfCut()
     printer.FeedLines(1)

@@ -35,3 +35,4 @@ Each functionality provided in C++ is compiled separately and included in a pyth
 
 # Notes for myself(2024/8/11):
 1.  There are still more functions from the origional API, need to explore the setprinting speed and density settings for better printing quality.
+2.  CP_Pos_SetPrintDensity(h, 30) gives pretty good printing quality.

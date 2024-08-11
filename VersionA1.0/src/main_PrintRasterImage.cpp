@@ -57,6 +57,8 @@ int main(int argc, char *argv[])
 
     // Execute the print
     if (h) {
+        int printDensity = 30; // 30 seems to be the best quality
+        CP_Pos_SetPrintDensity(h, printDensity);
         PrintRasterImage(h, imagePath);
         CP_Port_Close(h);
     }

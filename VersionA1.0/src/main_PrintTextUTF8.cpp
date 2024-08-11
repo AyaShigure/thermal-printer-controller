@@ -66,6 +66,8 @@ int main(int argc, char *argv[])
     // wchar_t strToPrint = *argv[2];
     // test function
     if (h) {
+        int printDensity = 30; // 30 seems to be the best quality
+        CP_Pos_SetPrintDensity(h, printDensity);
         PrintTextUTF8(h, wideStr);
         CP_Port_Close(h);
     }

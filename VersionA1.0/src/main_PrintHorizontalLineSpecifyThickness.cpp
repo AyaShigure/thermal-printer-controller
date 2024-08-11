@@ -48,6 +48,8 @@ int main(int argc, char *argv[])
     int nLineThickness = convertToInt(argv[4]);
     // Send cut paper command
     if (h) {
+        int printDensity = 30; // 30 seems to be the best quality
+        CP_Pos_SetPrintDensity(h, printDensity);
         CP_Pos_PrintHorizontalLineSpecifyThickness(h,nLineStartPosition,nLineEndPosition,nLineThickness);
         CP_Port_Close(h);
     }

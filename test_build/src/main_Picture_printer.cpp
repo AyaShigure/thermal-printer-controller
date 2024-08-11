@@ -106,8 +106,13 @@ int main(int argc, char *argv[])
 
     // wchar_t strToPrint = *argv[2];
     // test function
+    int printSpeed = 100; // mm/s????
+    int printDensity = 30; // 30 seems to be the best quality
     if (h) {
+        // CP_Pos_SetPrintSpeed(h, printSpeed);
+        int printDensity = 30; // 30 seems to be the best quality
 
+        CP_Pos_SetPrintDensity(h, printDensity);
         Test_Page_DrawTextInGBK_AYA(h, wideStr);
 
         // CP_Pos_FeedLine(h, 1);
@@ -124,3 +129,5 @@ int main(int argc, char *argv[])
     delete[] wideStr; // Clean up the allocated memory
     return 0;
 }
+// AUTOREPLYPRINT_API int CP_Pos_SetPrintSpeed(void *handle, int nSpeed);
+// AUTOREPLYPRINT_API int CP_Pos_SetPrintDensity(void *handle, int nDensity);

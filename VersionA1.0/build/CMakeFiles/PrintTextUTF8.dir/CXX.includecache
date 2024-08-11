@@ -24,3 +24,23 @@ stdio.h
 iostream
 -
 
+/home/ubuntu/thermal-printer-controller/VersionA1.0/src/printerutilities.cpp
+printerutilities.h
+/home/ubuntu/thermal-printer-controller/VersionA1.0/src/printerutilities.h
+stdio.h
+/home/ubuntu/thermal-printer-controller/VersionA1.0/src/stdio.h
+iostream
+-
+cwchar
+-
+clocale
+-
+cstring
+-
+cstdlib
+-
+cerrno
+-
+climits
+-
+

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/FeedLines.dir/src/main_FeedLines.cpp.o"
   "CMakeFiles/FeedLines.dir/src/printerutilities.cpp.o"
-  "cpp_bin/FeedLines"
-  "cpp_bin/FeedLines.pdb"
+  "python_API/cpp_bin/FeedLines"
+  "python_API/cpp_bin/FeedLines.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

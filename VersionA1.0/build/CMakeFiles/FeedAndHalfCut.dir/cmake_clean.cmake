@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/FeedAndHalfCut.dir/src/main_FeedAndHalfCut.cpp.o"
   "CMakeFiles/FeedAndHalfCut.dir/src/printerutilities.cpp.o"
-  "cpp_bin/FeedAndHalfCut"
-  "cpp_bin/FeedAndHalfCut.pdb"
+  "python_API/cpp_bin/FeedAndHalfCut"
+  "python_API/cpp_bin/FeedAndHalfCut.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

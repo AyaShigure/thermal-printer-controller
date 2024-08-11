@@ -1,1 +1,1 @@
-x86_64-linux-gnu-gcc     CMakeFiles/FeedAndFullCut.dir/src/main_FeedAndFullCut.cpp.o CMakeFiles/FeedAndFullCut.dir/src/printerutilities.cpp.o  -o cpp_bin/FeedAndFullCut  ../lib/libautoreplyprint.a -lstdc++ -lm -lpthread 
+x86_64-linux-gnu-gcc     CMakeFiles/FeedAndFullCut.dir/src/main_FeedAndFullCut.cpp.o CMakeFiles/FeedAndFullCut.dir/src/printerutilities.cpp.o  -o python_API/cpp_bin/FeedAndFullCut  ../lib/libautoreplyprint.a -lstdc++ -lm -lpthread 

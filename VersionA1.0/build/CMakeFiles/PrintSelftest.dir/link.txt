@@ -1,1 +1,1 @@
-x86_64-linux-gnu-gcc     CMakeFiles/PrintSelftest.dir/src/main_PrintSelftest.cpp.o CMakeFiles/PrintSelftest.dir/src/printerutilities.cpp.o  -o cpp_bin/PrintSelftest  ../lib/libautoreplyprint.a -lstdc++ -lm -lpthread 
+x86_64-linux-gnu-gcc     CMakeFiles/PrintSelftest.dir/src/main_PrintSelftest.cpp.o CMakeFiles/PrintSelftest.dir/src/printerutilities.cpp.o  -o python_API/cpp_bin/PrintSelftest  ../lib/libautoreplyprint.a -lstdc++ -lm -lpthread 

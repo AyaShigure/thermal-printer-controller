@@ -19,7 +19,7 @@ set(CMAKE_CXX_COMPILER x86_64-linux-gnu-gcc)
 # Target binary list
 set(target_list FeedAndFullCut;FeedDot;PrintHorizontalLineSpecifyThickness;PrintSelftest;FeedAndHalfCut;FeedLines;PrintRasterImage;PrintTextUTF8)
 
-set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/cpp_bin)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/python_API/cpp_bin)
 foreach(loop_var IN LISTS target_list)
     message("** Setting up target: ${loop_var}")
 
