@@ -3,10 +3,14 @@ This software package is based on what is provided by [Xiamen MY Electronic Tech
 
 ### VersionA1.0:
 This software package is a python API for controlling the thermal printer module. In the current versionA1.0 python API build, functionalities below are included. Each of below function is a binary executable which could be called indivadually. For example, one could make thermal prints simply from Jupyter Lab while testing the contents of which are being printed.
-1.  Printing text
-2.  Printing raster image
-3.  Feed and cut paper
-4.  ...
+1.  PrintTextUTF8
+2.  PrintRasterImage
+3.  FeedAndFullCut
+4.  FeedAndHalfCut
+5.  FeedDot
+6.  FeedLines
+7.  PrintHorizontalLineSpecifyThickness
+8.  PrintSelftest
 
 ### ~~VersionB1.0:~~
 ~~Aside from VersionA1.0, I have also made a VersionB1.0 which is a simple printer server written in C++. It is controlled via socket communication by a Pyhton script, which means the functionalities from VersionA1.0 are integrated together. Without the need of executing each binary with 'box64' everytime, VersionB1.0 should be a lot faster at run time than VersionA1.0(At least I think, still working on this part yet.)~~
