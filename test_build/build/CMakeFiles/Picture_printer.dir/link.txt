@@ -1,1 +1,0 @@
-x86_64-linux-gnu-gcc     CMakeFiles/Picture_printer.dir/src/main_Picture_printer.cpp.o CMakeFiles/Picture_printer.dir/src/cmdtestfunction.cpp.o CMakeFiles/Picture_printer.dir/src/cmdtestunit.cpp.o CMakeFiles/Picture_printer.dir/src/cmdtestutils.cpp.o  -o Picture_printer  ../lib/libautoreplyprint.a -lstdc++ -lm -lpthread 
