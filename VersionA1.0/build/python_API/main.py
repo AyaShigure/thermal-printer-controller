@@ -4,7 +4,8 @@ from printer_class import *
 
 if __name__ == '__main__':
     # Text to print
-    port = '/dev/usb/lp0'
+#    port = '/dev/usb/lp0'
+    port = '/dev/usb/lp3' # The port will change depends on how many other device is pluged in
     cpp_bin_path = './cpp_bin'
 
     string_to_print_pt1 = '''There is no end though there is a start in space. ---Infinity.
